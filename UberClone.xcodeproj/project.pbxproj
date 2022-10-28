@@ -14,6 +14,8 @@
 		970EBAD4290C1ADD008E4FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970EBAD3290C1ADD008E4FA7 /* Assets.xcassets */; };
 		970EBAD7290C1ADD008E4FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970EBAD5290C1ADD008E4FA7 /* LaunchScreen.storyboard */; };
 		970EBADF290C1C7A008E4FA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 970EBADE290C1C7A008E4FA7 /* GoogleService-Info.plist */; };
+		97396AFB290C6A4F003D3C7C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97396AFA290C6A4F003D3C7C /* LoginViewController.swift */; };
+		97396AFD290C6A66003D3C7C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97396AFC290C6A66003D3C7C /* SignUpViewController.swift */; };
 		F1B1C2A73DEF949FA55D1943 /* Pods_UberClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291407560B0B1CC24AC36D51 /* Pods_UberClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,8 @@
 		970EBAD6290C1ADD008E4FA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		970EBAD8290C1ADD008E4FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		970EBADE290C1C7A008E4FA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		97396AFA290C6A4F003D3C7C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		97396AFC290C6A66003D3C7C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D11E266DFABC4C48C0C99ECA /* Pods-UberClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberClone.release.xcconfig"; path = "Target Support Files/Pods-UberClone/Pods-UberClone.release.xcconfig"; sourceTree = "<group>"; };
 		F1BE0F4A746B8D9D33708243 /* Pods-UberClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberClone.debug.xcconfig"; path = "Target Support Files/Pods-UberClone/Pods-UberClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,7 +54,6 @@
 				F1BE0F4A746B8D9D33708243 /* Pods-UberClone.debug.xcconfig */,
 				D11E266DFABC4C48C0C99ECA /* Pods-UberClone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,8 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				970EBACA290C1AD9008E4FA7 /* AppDelegate.swift */,
+				97396AF9290C6998003D3C7C /* Model */,
+				97396AF8290C698A003D3C7C /* ViewController */,
 				970EBACC290C1AD9008E4FA7 /* SceneDelegate.swift */,
-				970EBACE290C1AD9008E4FA7 /* ViewController.swift */,
 				970EBAD0290C1AD9008E4FA7 /* Main.storyboard */,
 				970EBAD3290C1ADD008E4FA7 /* Assets.xcassets */,
 				970EBAD5290C1ADD008E4FA7 /* LaunchScreen.storyboard */,
@@ -93,6 +97,23 @@
 				970EBADE290C1C7A008E4FA7 /* GoogleService-Info.plist */,
 			);
 			path = UberClone;
+			sourceTree = "<group>";
+		};
+		97396AF8290C698A003D3C7C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				970EBACE290C1AD9008E4FA7 /* ViewController.swift */,
+				97396AFA290C6A4F003D3C7C /* LoginViewController.swift */,
+				97396AFC290C6A66003D3C7C /* SignUpViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		97396AF9290C6998003D3C7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,9 +232,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97396AFB290C6A4F003D3C7C /* LoginViewController.swift in Sources */,
 				970EBACF290C1AD9008E4FA7 /* ViewController.swift in Sources */,
 				970EBACB290C1AD9008E4FA7 /* AppDelegate.swift in Sources */,
 				970EBACD290C1AD9008E4FA7 /* SceneDelegate.swift in Sources */,
+				97396AFD290C6A66003D3C7C /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +391,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,6 +420,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
