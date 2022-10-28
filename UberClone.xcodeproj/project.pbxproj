@@ -13,9 +13,12 @@
 		970EBAD2290C1AD9008E4FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970EBAD0290C1AD9008E4FA7 /* Main.storyboard */; };
 		970EBAD4290C1ADD008E4FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970EBAD3290C1ADD008E4FA7 /* Assets.xcassets */; };
 		970EBAD7290C1ADD008E4FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970EBAD5290C1ADD008E4FA7 /* LaunchScreen.storyboard */; };
+		970EBADF290C1C7A008E4FA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 970EBADE290C1C7A008E4FA7 /* GoogleService-Info.plist */; };
+		F1B1C2A73DEF949FA55D1943 /* Pods_UberClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291407560B0B1CC24AC36D51 /* Pods_UberClone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		291407560B0B1CC24AC36D51 /* Pods_UberClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UberClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970EBAC7290C1AD9008E4FA7 /* UberClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		970EBACA290C1AD9008E4FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		970EBACC290C1AD9008E4FA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,9 @@
 		970EBAD3290C1ADD008E4FA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		970EBAD6290C1ADD008E4FA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		970EBAD8290C1ADD008E4FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		970EBADE290C1C7A008E4FA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D11E266DFABC4C48C0C99ECA /* Pods-UberClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberClone.release.xcconfig"; path = "Target Support Files/Pods-UberClone/Pods-UberClone.release.xcconfig"; sourceTree = "<group>"; };
+		F1BE0F4A746B8D9D33708243 /* Pods-UberClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberClone.debug.xcconfig"; path = "Target Support Files/Pods-UberClone/Pods-UberClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1B1C2A73DEF949FA55D1943 /* Pods_UberClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		669C0204FBAAB25B7F2531B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1BE0F4A746B8D9D33708243 /* Pods-UberClone.debug.xcconfig */,
+				D11E266DFABC4C48C0C99ECA /* Pods-UberClone.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		85E4A9E81464C2C12E6D1773 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				291407560B0B1CC24AC36D51 /* Pods_UberClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		970EBABE290C1AD9008E4FA7 = {
 			isa = PBXGroup;
 			children = (
 				970EBAC9290C1AD9008E4FA7 /* UberClone */,
 				970EBAC8290C1AD9008E4FA7 /* Products */,
+				669C0204FBAAB25B7F2531B0 /* Pods */,
+				85E4A9E81464C2C12E6D1773 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +90,7 @@
 				970EBAD3290C1ADD008E4FA7 /* Assets.xcassets */,
 				970EBAD5290C1ADD008E4FA7 /* LaunchScreen.storyboard */,
 				970EBAD8290C1ADD008E4FA7 /* Info.plist */,
+				970EBADE290C1C7A008E4FA7 /* GoogleService-Info.plist */,
 			);
 			path = UberClone;
 			sourceTree = "<group>";
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 970EBADB290C1ADD008E4FA7 /* Build configuration list for PBXNativeTarget "UberClone" */;
 			buildPhases = (
+				D6E8F1A822B0D05F7F1D7D71 /* [CP] Check Pods Manifest.lock */,
 				970EBAC3290C1AD9008E4FA7 /* Sources */,
 				970EBAC4290C1AD9008E4FA7 /* Frameworks */,
 				970EBAC5290C1AD9008E4FA7 /* Resources */,
+				43960C96626429B96DCB6A20 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +156,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				970EBAD7290C1ADD008E4FA7 /* LaunchScreen.storyboard in Resources */,
+				970EBADF290C1C7A008E4FA7 /* GoogleService-Info.plist in Resources */,
 				970EBAD4290C1ADD008E4FA7 /* Assets.xcassets in Resources */,
 				970EBAD2290C1AD9008E4FA7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43960C96626429B96DCB6A20 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UberClone/Pods-UberClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UberClone/Pods-UberClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UberClone/Pods-UberClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6E8F1A822B0D05F7F1D7D71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UberClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		970EBAC3290C1AD9008E4FA7 /* Sources */ = {
@@ -282,6 +355,7 @@
 		};
 		970EBADC290C1ADD008E4FA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1BE0F4A746B8D9D33708243 /* Pods-UberClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +383,7 @@
 		};
 		970EBADD290C1ADD008E4FA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D11E266DFABC4C48C0C99ECA /* Pods-UberClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
