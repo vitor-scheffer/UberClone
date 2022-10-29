@@ -17,8 +17,25 @@ class SignUpViewController: UIViewController {
     
     @IBAction func cadastrarUsuario(_ sender: Any) {
         let retorno = self.validarCampos()
+        
         if retorno == "" {
-            print("Cadastro realizado com sucesso!")
+            let autenticacao = Auth.auth()
+            if let emailR = self.email.text {
+                if let nomeR = self.nomeCompleto.text {
+                    if let senhaR = self.senha.text {
+                        autenticacao.createUser(withEmail: emailR, password: senhaR, completion: { usuario, erro in
+                            if erro == nil {
+                                print("Usuário cadastrado com sucesso!")
+                            } else {
+                                print("Erro ao cadastrar usuário, tente novamente!")
+                            }
+                        })
+                    }
+                }
+            }
+            
+            
+            
         } else {
             print("O campo \(retorno) não foi preenchido!")
         }
