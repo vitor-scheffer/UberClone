@@ -6,9 +6,38 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var nomeCompleto: UITextField!
+    @IBOutlet weak var senha: UITextField!
+    @IBOutlet weak var tipoUsuario: UISwitch!
+    
+    @IBAction func cadastrarUsuario(_ sender: Any) {
+        let retorno = self.validarCampos()
+        if retorno == "" {
+            print("Cadastro realizado com sucesso!")
+        } else {
+            print("O campo \(retorno) não foi preenchido!")
+        }
+        
+    }
+    
+    func validarCampos() -> String {
+        if (self.email.text?.isEmpty)! {
+            return "E-mail"
+        } else if (self.nomeCompleto.text?.isEmpty)! {
+            return "Nome Completo"
+        } else if (self.senha.text?.isEmpty)! {
+            return "Senha"
+        }
+        
+        return ""
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
