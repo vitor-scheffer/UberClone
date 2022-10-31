@@ -7,8 +7,11 @@
 
 import UIKit
 import FirebaseAuth
+import MapKit
 
 class PassageiroViewController: UIViewController {
+    
+    @IBOutlet weak var mapa: MKMapView!
     
     @IBAction func handleSignOut(_ sender: Any) {
         let autenticacao = Auth.auth()
