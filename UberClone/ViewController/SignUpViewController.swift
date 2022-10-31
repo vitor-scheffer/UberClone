@@ -39,7 +39,6 @@ class SignUpViewController: UIViewController {
         } else {
             print("O campo \(retorno) não foi preenchido!")
         }
-        
     }
     
     func validarCampos() -> String {

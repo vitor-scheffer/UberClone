@@ -152,6 +152,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="handleSignIn:" destination="VZG-Or-Hob" eventType="touchUpInside" id="yec-9d-Nuo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xfA-6c-YA1"/>
@@ -172,6 +175,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jwd-Ml-2Nq"/>
+                    <connections>
+                        <outlet property="email" destination="8Vj-qx-J8o" id="FiO-8Z-eXw"/>
+                        <outlet property="senha" destination="uH5-bj-hg4" id="nfk-0c-glv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pma-LJ-alc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
