@@ -105,7 +105,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Uber" id="EZc-hS-5QA"/>
                     <connections>
-                        <segue destination="1Ud-HF-g3f" kind="presentation" identifier="segueLoginPrincipal" id="48T-pY-t2a"/>
+                        <segue destination="cHm-fN-487" kind="presentation" identifier="segueLoginPrincipal" id="48T-pY-t2a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -181,7 +181,7 @@
                     <connections>
                         <outlet property="email" destination="8Vj-qx-J8o" id="FiO-8Z-eXw"/>
                         <outlet property="senha" destination="uH5-bj-hg4" id="nfk-0c-glv"/>
-                        <segue destination="dQ0-jg-6eN" kind="presentation" identifier="segueLogin" id="jzk-Qn-mdk"/>
+                        <segue destination="cHm-fN-487" kind="presentation" identifier="segueLogin" id="EwK-28-l1l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pma-LJ-alc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -198,11 +198,17 @@
                         <viewLayoutGuide key="safeArea" id="H2V-4w-UQk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="UBER" id="oCw-5e-izd"/>
+                    <navigationItem key="navigationItem" title="UBER" id="oCw-5e-izd">
+                        <barButtonItem key="leftBarButtonItem" title="Deslogar" id="b8t-aL-p2x">
+                            <connections>
+                                <action selector="handleSignOut:" destination="1Ud-HF-g3f" id="7y9-mW-fbl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySp-M3-Qwh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3520.0934579439249" y="2.5917926565874732"/>
+            <point key="canvasLocation" x="3543" y="3"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="dLg-2Y-hch">
@@ -319,7 +325,7 @@
                         <outlet property="nomeCompleto" destination="col-bH-5Ww" id="bGV-G4-wP4"/>
                         <outlet property="senha" destination="Jl2-1S-bml" id="6IK-F2-s7H"/>
                         <outlet property="tipoUsuario" destination="1E6-ZS-gFH" id="y6i-9Y-MpS"/>
-                        <segue destination="dQ0-jg-6eN" kind="presentation" identifier="segueLoginSignUp" id="zw1-d9-ouW"/>
+                        <segue destination="cHm-fN-487" kind="presentation" identifier="segueLoginSignUp" id="Qwo-fC-Wtf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3e9-cr-JNO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -345,27 +351,27 @@
             <point key="canvasLocation" x="261" y="3"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="dWJ-Fw-sf0">
+        <scene sceneID="Kbk-eg-dmn">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dQ0-jg-6eN" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cHm-fN-487" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hjj-3q-nr2">
+                    <navigationItem key="navigationItem" id="zbi-6g-d5E"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J3D-nW-j4c">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1Ud-HF-g3f" kind="relationship" relationship="rootViewController" id="XIq-Gd-Qy1"/>
+                        <segue destination="1Ud-HF-g3f" kind="relationship" relationship="rootViewController" id="bJT-mF-RGC"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c8j-Zm-BHE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Em4-lc-wey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2620.0934579439249" y="2.5917926565874732"/>
+            <point key="canvasLocation" x="2638" y="3"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jzk-Qn-mdk"/>
-        <segue reference="48T-pY-t2a"/>
+        <segue reference="Qwo-fC-Wtf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="fundo" width="2060" height="2060"/>

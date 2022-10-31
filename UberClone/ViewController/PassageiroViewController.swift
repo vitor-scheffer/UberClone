@@ -6,8 +6,19 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PassageiroViewController: UIViewController {
+    
+    @IBAction func handleSignOut(_ sender: Any) {
+        let autenticacao = Auth.auth()
+        do {
+            try autenticacao.signOut()
+            dismiss(animated: true)
+        } catch {
+            print("Não foi possível deslogar usuário!")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
