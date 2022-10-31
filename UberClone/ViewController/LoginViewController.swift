@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
                     autenticacao.signIn(withEmail: emailR, password: senhaR) { usuario, erro in
                         if erro == nil {
                             if usuario != nil {
-                                print("Usuário autenticado com sucesso!")
+                                self.performSegue(withIdentifier: "segueLogin", sender: nil)
                             }
                         } else {
                             print("Erro ao autenticar usuário, tente novamente!")

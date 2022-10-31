@@ -25,7 +25,9 @@ class SignUpViewController: UIViewController {
                     if let senhaR = self.senha.text {
                         autenticacao.createUser(withEmail: emailR, password: senhaR, completion: { usuario, erro in
                             if erro == nil {
-                                print("Usuário cadastrado com sucesso!")
+                                if usuario != nil {
+                                    self.performSegue(withIdentifier: "segueLoginSignUp", sender: nil)
+                                }
                             } else {
                                 print("Erro ao cadastrar usuário, tente novamente!")
                             }
