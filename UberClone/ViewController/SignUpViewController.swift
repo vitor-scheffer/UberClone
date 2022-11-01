@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
 
@@ -26,7 +27,24 @@ class SignUpViewController: UIViewController {
                         autenticacao.createUser(withEmail: emailR, password: senhaR, completion: { usuario, erro in
                             if erro == nil {
                                 if usuario != nil {
-                                    self.performSegue(withIdentifier: "segueLoginSignUp", sender: nil)
+                                    let database = Database.database().reference()
+                                    let usuarios = database.child("usuarios")
+                                    
+                                    func verificaTipo() -> String {
+                                        if self.tipoUsuario.isOn {
+                                            return "passageiro"
+                                        } else {
+                                            return "motorista"
+                                        }
+                                    }
+                                    
+                                    let dadosUsuario = [
+                                        "email": emailR,
+                                        "nome": nomeR,
+                                        "tipo": verificaTipo()
+                                    ]
+                                    
+                                    usuarios.child((usuario?.user.uid)!).setValue( dadosUsuario )
                                 }
                             } else {
                                 print("Erro ao cadastrar usuário, tente novamente!")

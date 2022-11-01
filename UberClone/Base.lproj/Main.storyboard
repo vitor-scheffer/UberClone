@@ -288,25 +288,19 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XZK-Mu-gje">
-                                <rect key="frame" x="63" y="326" width="249" height="31"/>
+                                <rect key="frame" x="70.333333333333329" y="326" width="234.66666666666669" height="31"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passageiro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mP-SD-eFB">
-                                        <rect key="frame" x="0.0" y="0.0" width="85" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="sXS-x6-dK0"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motorista" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mP-SD-eFB">
+                                        <rect key="frame" x="0.0" y="0.0" width="72.333333333333329" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1E6-ZS-gFH">
-                                        <rect key="frame" x="100" y="0.0" width="51" height="31"/>
+                                        <rect key="frame" x="87.333333333333329" y="0.0" width="50.999999999999986" height="31"/>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motorista" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pD0-kj-Yu6">
-                                        <rect key="frame" x="164" y="0.0" width="85" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="JKa-67-Uar"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passageiro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pD0-kj-Yu6">
+                                        <rect key="frame" x="151.33333333333331" y="0.0" width="83.333333333333314" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -407,7 +401,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EwK-28-l1l"/>
+        <segue reference="Qwo-fC-Wtf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="fundo" width="2060" height="2060"/>
