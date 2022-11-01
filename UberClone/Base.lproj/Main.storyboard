@@ -214,6 +214,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="chamarUber:" destination="1Ud-HF-g3f" eventType="touchUpInside" id="ROF-NR-20O"/>
                                     <action selector="handleSignIn:" destination="VZG-Or-Hob" eventType="touchUpInside" id="LMR-wf-xOg"/>
                                 </connections>
                             </button>

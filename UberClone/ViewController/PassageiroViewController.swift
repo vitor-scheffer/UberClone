@@ -7,12 +7,14 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 import MapKit
 
 class PassageiroViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapa: MKMapView!
     var gerenciadorLocalizacao = CLLocationManager()
+    var localUsuario = CLLocationCoordinate2D()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +24,27 @@ class PassageiroViewController: UIViewController, CLLocationManagerDelegate {
         gerenciadorLocalizacao.startUpdatingLocation()
     }
     
+    
+    @IBAction func chamarUber(_ sender: Any) {
+        let database = Database.database().reference()
+        let requisicao = database.child("requisicoes")
+        let autenticacao = Auth.auth()
+        
+        if let emailUsuario = autenticacao.currentUser?.email {
+            let dadosUsuario = [
+                "email": emailUsuario,
+                "nome":"Vitor Passageiro",
+                "latitude" : self.localUsuario.latitude,
+                "longitude" : self.localUsuario.longitude
+            ] as [String : Any]
+            requisicao.childByAutoId().setValue( dadosUsuario )
+        }
+        
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let coordenadas = manager.location?.coordinate {
+            self.localUsuario = coordenadas
             let regiao = MKCoordinateRegion(center: coordenadas, latitudinalMeters: 300, longitudinalMeters: 300)
             mapa.setRegion(regiao, animated: true)
             
