@@ -13,10 +13,11 @@
 		970EBAD2290C1AD9008E4FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970EBAD0290C1AD9008E4FA7 /* Main.storyboard */; };
 		970EBAD4290C1ADD008E4FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970EBAD3290C1ADD008E4FA7 /* Assets.xcassets */; };
 		970EBAD7290C1ADD008E4FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970EBAD5290C1ADD008E4FA7 /* LaunchScreen.storyboard */; };
-		970EBADF290C1C7A008E4FA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 970EBADE290C1C7A008E4FA7 /* GoogleService-Info.plist */; };
 		97396AFB290C6A4F003D3C7C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97396AFA290C6A4F003D3C7C /* LoginViewController.swift */; };
 		97396AFD290C6A66003D3C7C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97396AFC290C6A66003D3C7C /* SignUpViewController.swift */; };
 		979F5C032910759E0048CED6 /* PassageiroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F5C022910759E0048CED6 /* PassageiroViewController.swift */; };
+		97CEBE08298412370036B77A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 970EBADE290C1C7A008E4FA7 /* GoogleService-Info.plist */; };
+		97D586C52984452F00B33DE9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D586C42984452F00B33DE9 /* Extensions.swift */; };
 		F1B1C2A73DEF949FA55D1943 /* Pods_UberClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291407560B0B1CC24AC36D51 /* Pods_UberClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		97396AFA290C6A4F003D3C7C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		97396AFC290C6A66003D3C7C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		979F5C022910759E0048CED6 /* PassageiroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageiroViewController.swift; sourceTree = "<group>"; };
+		97D586C42984452F00B33DE9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D11E266DFABC4C48C0C99ECA /* Pods-UberClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberClone.release.xcconfig"; path = "Target Support Files/Pods-UberClone/Pods-UberClone.release.xcconfig"; sourceTree = "<group>"; };
 		F1BE0F4A746B8D9D33708243 /* Pods-UberClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberClone.debug.xcconfig"; path = "Target Support Files/Pods-UberClone/Pods-UberClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				970EBACA290C1AD9008E4FA7 /* AppDelegate.swift */,
+				97D586C32984451500B33DE9 /* Helper */,
 				97396AF9290C6998003D3C7C /* Model */,
 				97396AF8290C698A003D3C7C /* ViewController */,
 				970EBACC290C1AD9008E4FA7 /* SceneDelegate.swift */,
@@ -117,6 +120,14 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		97D586C32984451500B33DE9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				97D586C42984452F00B33DE9 /* Extensions.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				970EBAD7290C1ADD008E4FA7 /* LaunchScreen.storyboard in Resources */,
-				970EBADF290C1C7A008E4FA7 /* GoogleService-Info.plist in Resources */,
+				97CEBE08298412370036B77A /* GoogleService-Info.plist in Resources */,
 				970EBAD4290C1ADD008E4FA7 /* Assets.xcassets in Resources */,
 				970EBAD2290C1AD9008E4FA7 /* Main.storyboard in Resources */,
 			);
@@ -241,6 +252,7 @@
 				970EBACB290C1AD9008E4FA7 /* AppDelegate.swift in Sources */,
 				970EBACD290C1AD9008E4FA7 /* SceneDelegate.swift in Sources */,
 				97396AFD290C6A66003D3C7C /* SignUpViewController.swift in Sources */,
+				97D586C52984452F00B33DE9 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,11 +402,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UberClone/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Precisamos da sua localização para chamar o uber!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -419,11 +433,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UberClone/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Precisamos da sua localização para chamar o uber!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

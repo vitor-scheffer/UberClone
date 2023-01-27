@@ -11,62 +11,71 @@ import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
 
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var nomeCompleto: UITextField!
-    @IBOutlet weak var senha: UITextField!
-    @IBOutlet weak var tipoUsuario: UISwitch!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var userType: UISwitch!
     
-    @IBAction func cadastrarUsuario(_ sender: Any) {
-        let retorno = self.validarCampos()
+    @IBAction func didPressSignUp(_ sender: Any) {
+        let validationError = self.formValidate()
         
-        if retorno == "" {
-            let autenticacao = Auth.auth()
-            if let emailR = self.email.text {
-                if let nomeR = self.nomeCompleto.text {
-                    if let senhaR = self.senha.text {
-                        autenticacao.createUser(withEmail: emailR, password: senhaR, completion: { usuario, erro in
-                            if erro == nil {
-                                if usuario != nil {
-                                    let database = Database.database().reference()
-                                    let usuarios = database.child("usuarios")
-                                    
-                                    func verificaTipo() -> String {
-                                        if self.tipoUsuario.isOn {
-                                            return "passageiro"
-                                        } else {
-                                            return "motorista"
-                                        }
-                                    }
-                                    
-                                    let dadosUsuario = [
-                                        "email": emailR,
-                                        "nome": nomeR,
-                                        "tipo": verificaTipo()
-                                    ]
-                                    
-                                    usuarios.child((usuario?.user.uid)!).setValue( dadosUsuario )
-                                }
+        if validationError == "" {
+            self.view.addLoading()
+            
+            let auth = Auth.auth()
+            guard let email = emailField.text else { return }
+            guard let name = nameField.text else { return }
+            guard let password = passwordField.text else { return }
+            
+            auth.createUser(withEmail: email, password: password, completion: { user, error in
+                if error == nil {
+                    if user != nil {
+                        let database = Database.database().reference()
+                        let users = database.child("usuarios")
+                        guard let userUID = user?.user.uid else { return }
+                        
+                        func checkType() -> String {
+                            if self.userType.isOn {
+                                return "passageiro"
                             } else {
-                                print("Erro ao cadastrar usuário, tente novamente!")
+                                return "motorista"
                             }
-                        })
+                        }
+                        
+                        let userData = [
+                            "email": email,
+                            "nome": name,
+                            "tipo": checkType()
+                        ]
+                        
+                        users.child(userUID).setValue(userData)
+                        
+                        self.view.removeLoading()
                     }
+                } else {
+                    self.view.removeLoading()
+
+                    let alert = UIAlertController(title: "Ocorreu um erro", message: "Algum dado inválido, tente novamente.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+                    
+                    self.present(alert, animated: true)
                 }
-            }
-            
-            
-            
+            })
+             
         } else {
-            print("O campo \(retorno) não foi preenchido!")
+            let alert = UIAlertController(title: "", message: "O campo \(validationError) não foi preenchido!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+            
+            self.present(alert, animated: true)
         }
     }
     
-    func validarCampos() -> String {
-        if (self.email.text?.isEmpty)! {
+    func formValidate() -> String {
+        if (self.emailField.text?.isEmpty)! {
             return "E-mail"
-        } else if (self.nomeCompleto.text?.isEmpty)! {
+        } else if (self.nameField.text?.isEmpty)! {
             return "Nome Completo"
-        } else if (self.senha.text?.isEmpty)! {
+        } else if (self.passwordField.text?.isEmpty)! {
             return "Senha"
         }
         

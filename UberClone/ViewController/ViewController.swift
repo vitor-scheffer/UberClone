@@ -20,8 +20,9 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.tintColor = .white
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 

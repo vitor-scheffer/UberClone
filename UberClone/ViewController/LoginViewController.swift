@@ -10,37 +10,50 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var senha: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     
-    @IBAction func handleSignIn(_ sender: Any) {
-        let retorno = self.validarCampos()
+    @IBAction func didPressSignIn(_ sender: Any) {
+        self.view.addLoading()
         
-        if retorno == "" {
+        let validationError = self.formValidate()
+        
+        if validationError == "" {
             let autenticacao = Auth.auth()
-            if let emailR = self.email.text {
-                if let senhaR = self.senha.text {
-                    autenticacao.signIn(withEmail: emailR, password: senhaR) { usuario, erro in
-                        if erro == nil {
-                            if usuario != nil {
+            guard let email = emailField.text else {return}
+            guard let password = passwordField.text else {return}
+            
+                    autenticacao.signIn(withEmail: email, password: password) { user, error in
+                        if error == nil {
+                            if user != nil {
+                                self.view.removeLoading()
+
                                 self.performSegue(withIdentifier: "segueLogin", sender: nil)
                             }
                         } else {
-                            print("Erro ao autenticar usuário, tente novamente!")
+                            self.view.removeLoading()
+                            
+                            let alert = UIAlertController(title: "Ocorreu um erro", message: "Dados inválidos, verifique os campos e tente novamente.", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+                            
+                            self.present(alert, animated: true)
                         }
-                    }
-                }
             }
         } else {
-            print("O campo \(retorno) não foi preenhido!")
+            self.view.removeLoading()
+
+            let alert = UIAlertController(title: "", message: "O campo \(validationError) não foi preenchido!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+            
+            self.present(alert, animated: true)
         }
     }
     
     
-    func validarCampos() -> String {
-        if (self.email.text?.isEmpty)! {
+    func formValidate() -> String {
+        if (self.emailField.text?.isEmpty)! {
             return "E-mail"
-        } else if (self.senha.text?.isEmpty)! {
+        } else if (self.passwordField.text?.isEmpty)! {
             return "Senha"
         }
         
@@ -51,7 +64,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
