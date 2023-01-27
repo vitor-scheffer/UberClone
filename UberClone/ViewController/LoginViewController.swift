@@ -13,7 +13,26 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    @IBAction func didPressSignIn(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        clearTextFields()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction private func didPressSignIn(_ sender: Any) {
         self.view.addLoading()
         
         let validationError = self.formValidate()
@@ -50,7 +69,7 @@ class LoginViewController: UIViewController {
     }
     
     
-    func formValidate() -> String {
+    private func formValidate() -> String {
         if (self.emailField.text?.isEmpty)! {
             return "E-mail"
         } else if (self.passwordField.text?.isEmpty)! {
@@ -61,17 +80,8 @@ class LoginViewController: UIViewController {
 
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    private func clearTextFields() {
+        emailField.text = ""
+        passwordField.text = ""
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-
 }
