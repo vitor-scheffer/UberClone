@@ -108,6 +108,7 @@
                     <navigationItem key="navigationItem" title="Uber" id="EZc-hS-5QA"/>
                     <connections>
                         <segue destination="cHm-fN-487" kind="presentation" identifier="segueLoginPrincipal" modalPresentationStyle="fullScreen" id="48T-pY-t2a"/>
+                        <segue destination="buF-th-Z0r" kind="presentation" identifier="segueLoginPrincipalMotorista" modalPresentationStyle="fullScreen" id="Fdl-tG-3HN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -183,7 +184,6 @@
                     <connections>
                         <outlet property="emailField" destination="8Vj-qx-J8o" id="lLx-8f-oGG"/>
                         <outlet property="passwordField" destination="uH5-bj-hg4" id="CD8-cj-SjU"/>
-                        <segue destination="cHm-fN-487" kind="presentation" identifier="segueLogin" id="EwK-28-l1l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pma-LJ-alc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -246,6 +246,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySp-M3-Qwh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3542.0289855072465" y="2.0089285714285712"/>
+        </scene>
+        <!--Requisições-->
+        <scene sceneID="vtU-cc-ff1">
+            <objects>
+                <tableViewController id="AoK-uN-WFI" customClass="MotoristaTableViewController" customModule="UberClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ncR-tN-FN9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="g9w-D4-xp2">
+                                <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g9w-D4-xp2" id="lG6-6o-eEO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AoK-uN-WFI" id="A1j-1s-rW6"/>
+                            <outlet property="delegate" destination="AoK-uN-WFI" id="F0h-z1-l1j"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Requisições" id="foJ-6u-bXP">
+                        <barButtonItem key="leftBarButtonItem" title="Sair" id="JJV-K3-ds6">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didPressSignOut:" destination="AoK-uN-WFI" id="bjX-7i-EPk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fNb-28-stL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3542" y="702"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="dLg-2Y-hch">
@@ -356,7 +392,6 @@
                         <outlet property="nameField" destination="col-bH-5Ww" id="jVj-gS-Axp"/>
                         <outlet property="passwordField" destination="Jl2-1S-bml" id="1Bl-bk-8fy"/>
                         <outlet property="userType" destination="1E6-ZS-gFH" id="zoA-bl-gvv"/>
-                        <segue destination="cHm-fN-487" kind="presentation" identifier="segueLoginSignUp" id="Qwo-fC-Wtf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3e9-cr-JNO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -411,10 +446,28 @@
             </objects>
             <point key="canvasLocation" x="2638" y="3"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZWR-sh-Osn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="buF-th-Z0r" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ta-yO-B8z">
+                        <rect key="frame" x="0.0" y="47" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AoK-uN-WFI" kind="relationship" relationship="rootViewController" id="BD0-zH-Rne"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZWW-eI-uml" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2638" y="702"/>
+        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="48T-pY-t2a"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="fundo" width="2060" height="2060"/>
         <image name="logo" width="315" height="317"/>

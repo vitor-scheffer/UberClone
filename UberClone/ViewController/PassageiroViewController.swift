@@ -38,6 +38,10 @@ class PassageiroViewController: UIViewController, CLLocationManagerDelegate {
         if let email = auth.currentUser?.email {
             if calledUber == true {
                 self.changeCallButton()
+                
+                request.queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .childAdded, with: { snapshot in
+                    snapshot.ref.removeValue()
+                })
             } else {
                 self.changeCallButton()
                 
@@ -80,9 +84,9 @@ class PassageiroViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func handleSignOut(_ sender: Any) {
-        let autenticacao = Auth.auth()
+        let auth = Auth.auth()
         do {
-            try autenticacao.signOut()
+            try auth.signOut()
             
             dismiss(animated: true)
         } catch {

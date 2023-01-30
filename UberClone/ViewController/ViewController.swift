@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class ViewController: UIViewController {
 
@@ -15,8 +16,22 @@ class ViewController: UIViewController {
         let autenticacao = Auth.auth()
         
         autenticacao.addStateDidChangeListener { autenticacao, usuario in
-            if let usuarioLogado = usuario {
-                self.performSegue(withIdentifier: "segueLoginPrincipal", sender: nil)
+            if let user = usuario {
+                let database = Database.database().reference()
+                let users = database.child("usuarios").child(user.uid)
+                
+                users.observeSingleEvent(of: .value) { snapshot in
+                    
+                    guard let userData = snapshot.value as? NSDictionary else { return }
+                    let userType = userData["tipo"] as! String
+                    
+                    if userType == "passageiro" {
+                        self.performSegue(withIdentifier: "segueLoginPrincipal", sender: nil)
+
+                    } else {
+                        self.performSegue(withIdentifier: "segueLoginPrincipalMotorista", sender: nil)
+                    }
+                }
             }
         }
     }

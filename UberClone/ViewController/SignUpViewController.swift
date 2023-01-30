@@ -55,7 +55,7 @@ class SignUpViewController: UIViewController {
                 } else {
                     self.view.removeLoading()
 
-                    let alert = UIAlertController(title: "Ocorreu um erro", message: "Algum dado inválido, tente novamente.", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Ocorreu um erro", message: "Dados inválidos, verifique os campos e tente novamente.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
                     
                     self.present(alert, animated: true)
@@ -96,5 +96,16 @@ class SignUpViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        clearTextFields()
+    }
 
+    private func clearTextFields() {
+        emailField.text = ""
+        nameField.text = ""
+        passwordField.text = ""
+    }
 }

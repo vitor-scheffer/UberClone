@@ -45,9 +45,8 @@ class LoginViewController: UIViewController {
                     autenticacao.signIn(withEmail: email, password: password) { user, error in
                         if error == nil {
                             if user != nil {
+                                
                                 self.view.removeLoading()
-
-                                self.performSegue(withIdentifier: "segueLogin", sender: nil)
                             }
                         } else {
                             self.view.removeLoading()
