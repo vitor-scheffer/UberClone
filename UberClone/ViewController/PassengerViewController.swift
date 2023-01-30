@@ -10,7 +10,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import MapKit
 
-class PassageiroViewController: UIViewController, CLLocationManagerDelegate {
+class PassengerViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var botaoChamar: UIButton!
     @IBOutlet weak var mapa: MKMapView!
@@ -43,15 +43,24 @@ class PassageiroViewController: UIViewController, CLLocationManagerDelegate {
                     snapshot.ref.removeValue()
                 })
             } else {
-                self.changeCallButton()
                 
-                let userData = [
-                    "email": email,
-                    "nome": "Vitor Scheffer",
-                    "latitude" : self.userLocation.latitude,
-                    "longitude" : self.userLocation.longitude
-                ] as [String : Any]
-                request.childByAutoId().setValue( userData )
+                if let userUID = auth.currentUser?.uid {
+                    let users = database.child("usuarios").child(userUID)
+                    users.observeSingleEvent(of: .value) { snapshot in
+                        let data = snapshot.value as? NSDictionary
+                        guard let name = data?["nome"] as? String else { return }
+                        
+                        let userData = [
+                            "email": email,
+                            "nome": name,
+                            "latitude" : self.userLocation.latitude,
+                            "longitude" : self.userLocation.longitude
+                        ] as [String : Any]
+                        request.childByAutoId().setValue( userData )
+                        
+                        self.changeCallButton()
+                    }
+                }
             }
         }
     }

@@ -15,9 +15,10 @@
 		970EBAD7290C1ADD008E4FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970EBAD5290C1ADD008E4FA7 /* LaunchScreen.storyboard */; };
 		97396AFB290C6A4F003D3C7C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97396AFA290C6A4F003D3C7C /* LoginViewController.swift */; };
 		97396AFD290C6A66003D3C7C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97396AFC290C6A66003D3C7C /* SignUpViewController.swift */; };
-		979F5C032910759E0048CED6 /* PassageiroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F5C022910759E0048CED6 /* PassageiroViewController.swift */; };
+		979F5C032910759E0048CED6 /* PassengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F5C022910759E0048CED6 /* PassengerViewController.swift */; };
 		97A4E1D629860480002CA237 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 97A4E1D529860480002CA237 /* Localizable.strings */; };
-		97A4E1D82986DCE1002CA237 /* MotoristaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A4E1D72986DCE1002CA237 /* MotoristaTableViewController.swift */; };
+		97A4E1D82986DCE1002CA237 /* DriverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A4E1D72986DCE1002CA237 /* DriverTableViewController.swift */; };
+		97A4E1DD29885D9A002CA237 /* ConfirmRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A4E1DC29885D9A002CA237 /* ConfirmRequestViewController.swift */; };
 		97CEBE08298412370036B77A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 970EBADE290C1C7A008E4FA7 /* GoogleService-Info.plist */; };
 		97D586C52984452F00B33DE9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D586C42984452F00B33DE9 /* Extensions.swift */; };
 		F1B1C2A73DEF949FA55D1943 /* Pods_UberClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291407560B0B1CC24AC36D51 /* Pods_UberClone.framework */; };
@@ -36,9 +37,10 @@
 		970EBADE290C1C7A008E4FA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		97396AFA290C6A4F003D3C7C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		97396AFC290C6A66003D3C7C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		979F5C022910759E0048CED6 /* PassageiroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageiroViewController.swift; sourceTree = "<group>"; };
+		979F5C022910759E0048CED6 /* PassengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerViewController.swift; sourceTree = "<group>"; };
 		97A4E1D529860480002CA237 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		97A4E1D72986DCE1002CA237 /* MotoristaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotoristaTableViewController.swift; sourceTree = "<group>"; };
+		97A4E1D72986DCE1002CA237 /* DriverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTableViewController.swift; sourceTree = "<group>"; };
+		97A4E1DC29885D9A002CA237 /* ConfirmRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmRequestViewController.swift; sourceTree = "<group>"; };
 		97D586C42984452F00B33DE9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D11E266DFABC4C48C0C99ECA /* Pods-UberClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberClone.release.xcconfig"; path = "Target Support Files/Pods-UberClone/Pods-UberClone.release.xcconfig"; sourceTree = "<group>"; };
 		F1BE0F4A746B8D9D33708243 /* Pods-UberClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UberClone.debug.xcconfig"; path = "Target Support Files/Pods-UberClone/Pods-UberClone.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,8 +117,9 @@
 				970EBACE290C1AD9008E4FA7 /* ViewController.swift */,
 				97396AFA290C6A4F003D3C7C /* LoginViewController.swift */,
 				97396AFC290C6A66003D3C7C /* SignUpViewController.swift */,
-				979F5C022910759E0048CED6 /* PassageiroViewController.swift */,
-				97A4E1D72986DCE1002CA237 /* MotoristaTableViewController.swift */,
+				979F5C022910759E0048CED6 /* PassengerViewController.swift */,
+				97A4E1D72986DCE1002CA237 /* DriverTableViewController.swift */,
+				97A4E1DC29885D9A002CA237 /* ConfirmRequestViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -253,13 +256,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				979F5C032910759E0048CED6 /* PassageiroViewController.swift in Sources */,
+				979F5C032910759E0048CED6 /* PassengerViewController.swift in Sources */,
 				97396AFB290C6A4F003D3C7C /* LoginViewController.swift in Sources */,
 				970EBACF290C1AD9008E4FA7 /* ViewController.swift in Sources */,
+				97A4E1DD29885D9A002CA237 /* ConfirmRequestViewController.swift in Sources */,
 				970EBACB290C1AD9008E4FA7 /* AppDelegate.swift in Sources */,
 				970EBACD290C1AD9008E4FA7 /* SceneDelegate.swift in Sources */,
 				97396AFD290C6A66003D3C7C /* SignUpViewController.swift in Sources */,
-				97A4E1D82986DCE1002CA237 /* MotoristaTableViewController.swift in Sources */,
+				97A4E1D82986DCE1002CA237 /* DriverTableViewController.swift in Sources */,
 				97D586C52984452F00B33DE9 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
